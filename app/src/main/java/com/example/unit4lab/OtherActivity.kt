@@ -53,6 +53,7 @@ class OtherActivity : AppCompatActivity() {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }else{
+            //There is no call to be answered
             Toast.makeText(this, "No Call to be Answered", Toast.LENGTH_LONG).show()
         }
     }
@@ -61,6 +62,7 @@ class OtherActivity : AppCompatActivity() {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }else{
+            //This intent action is only available for API level 30
             Toast.makeText(this, "No setting available", Toast.LENGTH_LONG).show()
         }
     }
