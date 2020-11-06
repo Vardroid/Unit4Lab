@@ -17,6 +17,7 @@ class OtherActivity : AppCompatActivity() {
         findViewById<Button>(R.id.openYouTubeBtn).setOnClickListener{openYT()}
         findViewById<Button>(R.id.openSettingsBtn).setOnClickListener{openSett()}
         findViewById<Button>(R.id.openInputBtn).setOnClickListener{openInp()}
+        findViewById<Button>(R.id.imgEditBtn).setOnClickListener{biom()}
     }
 
     private fun createMessage(){
@@ -48,11 +49,19 @@ class OtherActivity : AppCompatActivity() {
         }
     }
     private fun openInp(){
-        val intent = Intent(Settings.ACTION_INPUT_METHOD_SETTINGS)
+        val intent = Intent(Intent.ACTION_ANSWER)
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }else{
-            Toast.makeText(this, "No Input Setting Available.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "No Call to be Answered", Toast.LENGTH_LONG).show()
+        }
+    }
+    private fun biom(){
+        val intent = Intent(Settings.ACTION_BIOMETRIC_ENROLL)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }else{
+            Toast.makeText(this, "No setting available", Toast.LENGTH_LONG).show()
         }
     }
 }
