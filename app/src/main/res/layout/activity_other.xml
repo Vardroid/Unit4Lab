@@ -7,11 +7,23 @@
     tools:context=".OtherActivity">
 
     <Button
+        android:id="@+id/openInputBtn"
+        android:layout_width="251dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="44dp"
+        android:text="Open Input Settings"
+        android:textSize="18sp"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openSettingsBtn" />
+
+    <Button
         android:id="@+id/openSettingsBtn"
         android:layout_width="251dp"
         android:layout_height="69dp"
         android:layout_marginTop="36dp"
-        android:text="Open Youtube.com"
+        android:text="Open General Settings"
         android:textSize="18sp"
         app:backgroundTint="#2196F3"
         app:layout_constraintEnd_toEndOf="parent"

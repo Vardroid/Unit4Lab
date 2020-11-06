@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Button
+import android.widget.Toast
 
 class OtherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +16,7 @@ class OtherActivity : AppCompatActivity() {
         findViewById<Button>(R.id.createMsgbtn).setOnClickListener{createMessage()}
         findViewById<Button>(R.id.openYouTubeBtn).setOnClickListener{openYT()}
         findViewById<Button>(R.id.openSettingsBtn).setOnClickListener{openSett()}
+        findViewById<Button>(R.id.openInputBtn).setOnClickListener{openInp()}
     }
 
     private fun createMessage(){
@@ -43,6 +45,14 @@ class OtherActivity : AppCompatActivity() {
         val intent = Intent(Settings.ACTION_SETTINGS)
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
+        }
+    }
+    private fun openInp(){
+        val intent = Intent(Settings.ACTION_INPUT_METHOD_SETTINGS)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }else{
+            Toast.makeText(this, "No Input Setting Available.", Toast.LENGTH_LONG).show()
         }
     }
 }
